@@ -1,0 +1,31 @@
+{
+    "name": "Screenshot Recorder",
+    "description": "A Chrome Extension that capture screen of your current page in entirety and reliably",
+    "version": "0.0.1",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": ["desktopCapture", "tabs", "downloads"],
+    "action": {
+        "default_icon": {
+            "16": "assets/camera-16.png",
+            "32": "assets/camera-32.png",
+            "48": "assets/camera-48.png",
+            "128": "assets/camera-128.png"
+        },
+        "default_title": "Capture A Screenshot"
+    },
+    "icons": {
+        "16": "assets/camera-16.png",
+        "32": "assets/camera-32.png",
+        "48": "assets/camera-48.png",
+        "128": "assets/camera-128.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content_scripts.js"]
+        }
+    ]
+}
